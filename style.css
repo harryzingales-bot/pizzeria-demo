@@ -1,0 +1,174 @@
+/* ===== Pizzeria Da Nonno Marco — style.css ===== */
+:root {
+  --rosso: #b5342b;
+  --rosso-scuro: #8e2a23;
+  --crema: #faf3e7;
+  --marrone: #3b2a20;
+  --oro: #d9a441;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--crema);
+  color: var(--marrone);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Trebuchet MS', Verdana, sans-serif; }
+
+/* ---- Header e navigazione ---- */
+header {
+  background: var(--rosso);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 1.2rem;
+}
+.logo {
+  color: var(--crema);
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.logo span { color: var(--oro); }
+.nav ul { list-style: none; display: flex; gap: 1.2rem; }
+.nav a {
+  color: var(--crema);
+  text-decoration: none;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: .95rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s;
+}
+.nav a:hover, .nav a.attivo { border-bottom-color: var(--oro); }
+.burger { display: none; background: none; border: none; color: var(--crema); font-size: 1.6rem; cursor: pointer; }
+
+/* ---- Hero ---- */
+.hero {
+  position: relative;
+  height: 65vh;
+  min-height: 380px;
+  background: url('../assets/img/hero-pizza.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(30,15,10,.45);
+}
+.hero-contenuto { position: relative; color: #fff; padding: 0 1rem; }
+.hero-contenuto h1 { font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 6px rgba(0,0,0,.5); }
+.hero-contenuto p { font-size: 1.15rem; margin: .8rem 0 1.4rem; }
+.pulsante {
+  display: inline-block;
+  background: var(--oro);
+  color: var(--marrone);
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  padding: .8rem 1.8rem;
+  border-radius: 30px;
+  transition: transform .15s, background .2s;
+}
+.pulsante:hover { background: #c58f2e; transform: translateY(-2px); }
+
+/* ---- Sezioni ---- */
+.contenitore { max-width: 1000px; margin: 0 auto; padding: 3rem 1.2rem; }
+.centro { text-align: center; }
+.centro h2 { color: var(--rosso); font-size: 1.9rem; margin-bottom: .6rem; }
+.centro p.sub { color: #6d5a4c; margin-bottom: 2.2rem; }
+
+.griglia-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.carta {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+  transition: transform .2s;
+}
+.carta:hover { transform: translateY(-5px); }
+.carta img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.carta .corpo { padding: 1.1rem 1.2rem 1.4rem; }
+.carta h3 { color: var(--rosso); margin-bottom: .4rem; }
+
+/* ---- Menu ---- */
+.elenco-menu { max-width: 700px; margin: 0 auto; }
+.voce-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed #d8c8b4;
+}
+.voce-menu .nome { font-family: 'Trebuchet MS', Verdana, sans-serif; font-weight: bold; }
+.voce-menu .desc { display: block; font-size: .9rem; color: #7a6656; font-weight: normal; }
+.voce-menu .prezzo { color: var(--rosso); font-weight: bold; white-space: nowrap; }
+.categoria { color: var(--rosso); font-size: 1.4rem; margin: 2.2rem 0 .6rem; border-bottom: 2px solid var(--oro); padding-bottom: .3rem; }
+
+/* ---- Info / contatti ---- */
+.due-colonne { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+.due-colonne img { width: 100%; border-radius: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.due-colonne h2 { color: var(--rosso); margin-bottom: 1rem; }
+.due-colonne ul { list-style: none; margin-top: 1rem; }
+.due-colonne li { padding: .35rem 0; }
+.due-colonne li strong { color: var(--rosso-scuro); }
+
+form.contatto { display: grid; gap: .9rem; max-width: 600px; margin: 0 auto; }
+form.contatto label { font-family: 'Trebuchet MS', Verdana, sans-serif; font-weight: bold; font-size: .9rem; }
+form.contatto input, form.contatto textarea {
+  width: 100%;
+  padding: .7rem .9rem;
+  border: 1px solid #cbb9a4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+}
+form.contatto input:focus, form.contatto textarea:focus { outline: 2px solid var(--oro); border-color: transparent; }
+form.contatto button { justify-self: start; border: none; cursor: pointer; font-size: 1rem; }
+.messaggio-invio { display: none; color: #2e7d32; font-family: 'Trebuchet MS', Verdana, sans-serif; font-weight: bold; }
+.messaggio-invio.visibile { display: block; }
+
+/* ---- Footer ---- */
+footer {
+  background: var(--marrone);
+  color: #e8dcc9;
+  text-align: center;
+  padding: 2rem 1.2rem;
+  font-size: .9rem;
+}
+footer a { color: var(--oro); text-decoration: none; }
+
+/* ---- Responsive ---- */
+@media (max-width: 760px) {
+  .griglia-3 { grid-template-columns: 1fr; }
+  .due-colonne { grid-template-columns: 1fr; }
+  .nav ul {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--rosso-scuro);
+    padding: 1rem 1.2rem;
+    gap: .8rem;
+  }
+  .nav ul.aperto { display: flex; }
+  .burger { display: block; }
+}

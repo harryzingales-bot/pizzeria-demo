@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — Pizzeria Da Nonno Marco</title>
+  <meta name="description" content="Contatti e orari della Pizzeria Da Nonno Marco.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">🍕 Pizzeria <span>Da Nonno Marco</span></a>
+    <button class="burger" aria-label="Apri menu">☰</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menù</a></li>
+      <li><a href="chi-siamo.html">Chi Siamo</a></li>
+      <li><a href="contatti.html">Contatti</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="contenuto contenitore">
+  <div class="centro">
+    <h2>Contatti e orari</h2>
+    <p class="sub">Prenota il tuo tavolo o passa a prendere la pizza d'asporto.</p>
+  </div>
+  <div class="due-colonne">
+    <div>
+      <h2>Dove siamo</h2>
+      <ul>
+        <li><strong>Indirizzo:</strong> Via Roma 42, 20100 Milano</li>
+        <li><strong>Telefono:</strong> <a href="tel:+390212345678">02 1234 5678</a></li>
+        <li><strong>Email:</strong> <a href="mailto:info@pizzeriadanonnomarco.it">info@pizzeriadanonnomarco.it</a></li>
+      </ul>
+      <h2 style="margin-top:1.5rem">Orari</h2>
+      <ul>
+        <li><strong>Lun – Gio:</strong> 12:00 – 14:30 / 18:30 – 23:00</li>
+        <li><strong>Ven – Dom:</strong> 12:00 – 15:00 / 18:30 – 24:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Scrivici</h2>
+      <form class="contatto">
+        <div><label for="nome">Nome</label><input id="nome" type="text" required placeholder="Il tuo nome"></div>
+        <div><label for="email">Email</label><input id="email" type="email" required placeholder="La tua email"></div>
+        <div><label for="messaggio">Messaggio</label><textarea id="messaggio" rows="5" required placeholder="Richiesta prenotazione, informazioni..."></textarea></div>
+        <button class="pulsante" type="submit">Invia messaggio</button>
+        <p class="messaggio-invio">✅ Grazie! Il tuo messaggio è stato registrato (demo).</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>🍕 Pizzeria Da Nonno Marco — Via Roma 42, 20100 Milano</p>
+  <p>Tel: <a href="tel:+390212345678">02 1234 5678</a> · <a href="contatti.html">Scrivici</a></p>
+  <p>© 2026 Pizzeria Da Nonno Marco. Sito dimostrativo.</p>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>

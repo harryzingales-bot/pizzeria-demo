@@ -61,7 +61,7 @@ header {
   position: relative;
   height: 65vh;
   min-height: 380px;
-  background: url('../assets/img/hero-pizza.png') center/cover no-repeat;
+  background: url('../hero-pizza.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
